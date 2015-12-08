@@ -6,26 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="WRI-NL-uVR">
-            <objects>
-                <viewController id="wnT-dz-GUg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Rnq-lQ-2eE"/>
-                        <viewControllerLayoutGuide type="bottom" id="mhO-pM-lQH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gPi-vb-HEd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="history" id="Vjk-lS-wHs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xSs-kn-BXg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="294" y="560"/>
-        </scene>
         <!--Search View Controller-->
         <scene sceneID="JwV-ra-3TX">
             <objects>
@@ -46,7 +26,7 @@
                                     <segue destination="y4j-iQ-ADs" kind="show" identifier="usernameSearchSegue" id="Dpc-U1-bzH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldO-OO-zr5">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Steam ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldO-OO-zr5">
                                 <rect key="frame" x="40" y="85" width="520" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -106,10 +86,11 @@
                             <outlet property="delegate" destination="y4j-iQ-ADs" id="CU8-4P-LzW"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="BhS-IS-QdL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJi-Zg-klc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1023" y="-101"/>
+            <point key="canvasLocation" x="441" y="625"/>
         </scene>
         <!--Match Detail Controller-->
         <scene sceneID="NT6-r0-5gz">
@@ -128,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfk-vz-BdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747" y="-95"/>
+            <point key="canvasLocation" x="1054" y="176"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sta-lQ-VeK">
@@ -160,7 +141,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="gVo-G6-KI7" kind="relationship" relationship="viewControllers" id="xIU-SW-AOf"/>
-                        <segue destination="wnT-dz-GUg" kind="relationship" relationship="viewControllers" id="OTB-AJ-zcD"/>
+                        <segue destination="y4j-iQ-ADs" kind="relationship" relationship="viewControllers" id="Mgd-qB-tTS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9c-d0-0MX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,4 +149,7 @@
             <point key="canvasLocation" x="-526" y="230"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Dpc-U1-bzH"/>
+    </inferredMetricsTieBreakers>
 </document>
