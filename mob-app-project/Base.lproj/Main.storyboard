@@ -42,6 +42,9 @@
                                 <rect key="frame" x="276" y="135" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="UMQ-88-d7n" kind="show" identifier="usernameSearchSegue" id="6Mc-NX-VDW"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldO-OO-zr5">
                                 <rect key="frame" x="40" y="85" width="520" height="30"/>
@@ -69,6 +72,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyC-5Q-1zf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="294" y="-101"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GeA-1Q-j7K">
+            <objects>
+                <viewController id="UMQ-88-d7n" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kec-T5-CF6"/>
+                        <viewControllerLayoutGuide type="bottom" id="10S-iN-6aT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lQ8-AP-WWu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTW-Wh-zOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="-101"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sta-lQ-VeK">
