@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,10 +27,12 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchButton: UIButton!
     
-//    func textFieldShouldReturn(valueTextField: UITextField) -> Bool {
-//        // Hides the keyboard when return is pressed
-//        valueTextField.resignFirstResponder()
-//        
-//        return true
-//    }
+    // MARK: Actions
+    
+    func textFieldShouldReturn(searchTextField: UITextField) -> Bool {
+        // Hides the keyboard when return is pressed
+        searchTextField.resignFirstResponder()
+        
+        return true
+    }
 }
