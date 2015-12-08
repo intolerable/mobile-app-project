@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="1023" y="-101"/>
         </scene>
-        <!--View Controller-->
+        <!--Match Detail Controller-->
         <scene sceneID="NT6-r0-5gz">
             <objects>
-                <viewController id="a7n-mW-EcH" sceneMemberID="viewController">
+                <viewController id="a7n-mW-EcH" customClass="MatchDetailController" customModule="mob_app_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SfN-Ja-iXP"/>
                         <viewControllerLayoutGuide type="bottom" id="c7E-Rl-X5P"/>
