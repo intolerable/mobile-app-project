@@ -11,8 +11,22 @@ import UIKit
 
 class UserMatchHistory: UITableViewController {
     
+    let transportItems = ["Bus","Helicopter","Truck","Boat","Bicycle","Motorcycle","Plane","Train","Car","Scooter","Caravan"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transportItems.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("prototypeCell1")! as UITableViewCell
+        
+        cell.textLabel?.text = transportItems[indexPath.row]
+        
+        return cell
+    }
 }
