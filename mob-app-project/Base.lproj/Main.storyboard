@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="294" y="560"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="JwV-ra-3TX">
             <objects>
-                <viewController id="gVo-G6-KI7" sceneMemberID="viewController">
+                <viewController id="gVo-G6-KI7" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H9o-Uc-WOM"/>
                         <viewControllerLayoutGuide type="bottom" id="oh4-ml-nJK"/>
