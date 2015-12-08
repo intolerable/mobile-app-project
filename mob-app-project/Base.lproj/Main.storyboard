@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="294" y="-101"/>
         </scene>
-        <!--Table View Controller-->
+        <!--User Match History-->
         <scene sceneID="25K-r3-0dO">
             <objects>
-                <tableViewController id="y4j-iQ-ADs" sceneMemberID="viewController">
+                <tableViewController id="y4j-iQ-ADs" customClass="UserMatchHistory" customModule="mob_app_project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cfP-BT-qQ0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserMatchHistory: UIViewController {
+class UserMatchHistory: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
