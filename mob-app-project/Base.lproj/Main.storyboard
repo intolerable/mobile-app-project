@@ -96,6 +96,9 @@
                                     <accessibilityTraits key="traits" button="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
+                                <connections>
+                                    <segue destination="a7n-mW-EcH" kind="show" id="2LR-3N-VpG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -107,6 +110,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJi-Zg-klc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1023" y="-101"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NT6-r0-5gz">
+            <objects>
+                <viewController id="a7n-mW-EcH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SfN-Ja-iXP"/>
+                        <viewControllerLayoutGuide type="bottom" id="c7E-Rl-X5P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XFy-hh-g76">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kfk-vz-BdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747" y="-95"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sta-lQ-VeK">
