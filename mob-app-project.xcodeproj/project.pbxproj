@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C451C1E1C17299F00B66D31 /* HTTPStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */; };
 		5DA165A11C1725D300289D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165A01C1725D300289D55 /* AppDelegate.swift */; };
 		5DA165A31C1725D300289D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165A21C1725D300289D55 /* ViewController.swift */; };
 		5DA165A61C1725D300289D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA165A41C1725D300289D55 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStuff.swift; sourceTree = "<group>"; };
 		5DA1659D1C1725D300289D55 /* mob-app-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mob-app-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA165A01C1725D300289D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DA165A21C1725D300289D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				5DA165A01C1725D300289D55 /* AppDelegate.swift */,
 				5DA165A21C1725D300289D55 /* ViewController.swift */,
+				4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */,
 				5DA165A41C1725D300289D55 /* Main.storyboard */,
 				5DA165A71C1725D300289D55 /* Assets.xcassets */,
 				5DA165A91C1725D300289D55 /* LaunchScreen.storyboard */,
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA165A31C1725D300289D55 /* ViewController.swift in Sources */,
+				4C451C1E1C17299F00B66D31 /* HTTPStuff.swift in Sources */,
 				5DA165A11C1725D300289D55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +392,7 @@
 				5DA165BC1C1725D300289D55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DA165BD1C1725D300289D55 /* Build configuration list for PBXNativeTarget "mob-app-projectTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +401,7 @@
 				5DA165BF1C1725D300289D55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
