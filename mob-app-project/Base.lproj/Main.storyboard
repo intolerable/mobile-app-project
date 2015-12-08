@@ -29,7 +29,7 @@
         <!--Search View Controller-->
         <scene sceneID="JwV-ra-3TX">
             <objects>
-                <viewController id="gVo-G6-KI7" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController id="gVo-G6-KI7" customClass="SearchViewController" customModule="mob_app_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H9o-Uc-WOM"/>
                         <viewControllerLayoutGuide type="bottom" id="oh4-ml-nJK"/>
