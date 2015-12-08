@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="294" y="-101"/>
         </scene>
-        <!--View Controller-->
+        <!--User Match History-->
         <scene sceneID="GeA-1Q-j7K">
             <objects>
-                <viewController id="UMQ-88-d7n" sceneMemberID="viewController">
+                <viewController id="UMQ-88-d7n" customClass="UserMatchHistory" customModule="mob_app_project" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kec-T5-CF6"/>
                         <viewControllerLayoutGuide type="bottom" id="10S-iN-6aT"/>
@@ -95,7 +95,6 @@
         <!--Navigation Controller-->
         <scene sceneID="sta-lQ-VeK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qGy-u3-3eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="pmE-Gm-MeP" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zqf-WI-CyB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -106,6 +105,7 @@
                         <segue destination="d6e-mg-LqW" kind="relationship" relationship="rootViewController" id="ofa-S1-rjK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGy-u3-3eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1264" y="230"/>
         </scene>
