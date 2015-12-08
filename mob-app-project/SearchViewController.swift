@@ -18,4 +18,17 @@ class SearchViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // MARK: Properties
+    
+    @IBOutlet weak var searchTextField: UITextField!
+    
+    @IBOutlet weak var searchButton: UIButton!
+    
+//    func textFieldShouldReturn(valueTextField: UITextField) -> Bool {
+//        // Hides the keyboard when return is pressed
+//        valueTextField.resignFirstResponder()
+//        
+//        return true
+//    }
 }

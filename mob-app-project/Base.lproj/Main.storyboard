@@ -61,6 +61,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="fDl-Fy-7FZ"/>
+                    <connections>
+                        <outlet property="searchButton" destination="YFp-l2-5up" id="cpM-3W-MrW"/>
+                        <outlet property="searchTextField" destination="ldO-OO-zr5" id="Gjh-m8-n1B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyC-5Q-1zf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
