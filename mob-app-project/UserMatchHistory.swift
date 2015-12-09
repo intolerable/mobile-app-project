@@ -12,6 +12,8 @@ import UIKit
 class UserMatchHistory: UITableViewController {
     
     let transportItems = ["Bus","Helicopter","Truck","Boat","Bicycle","Motorcycle","Plane","Train","Car","Scooter","Caravan"]
+
+    @IBOutlet var historyView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
