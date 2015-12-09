@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-class MatchDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+class MatchDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Outlet
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var victoryLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var team1Table: UITableView!
     @IBOutlet weak var team2Table: UITableView!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var victoryLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let team1 = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
     let team2 = ["Player 1", "Player 2", "Player 3", "Player 9", "Player 10"]
@@ -24,7 +24,12 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scrollView.contentSize = CGSizeMake(300, 1000)
+        team1Table.delegate = self
+        team2Table.delegate = self
+        team1Table.dataSource = self
+        team2Table.dataSource = self
+        
+        scrollView.contentSize.height = 1000
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,14 +44,14 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if tableView.isEqual(team1Table){
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("team1Player")! as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("team1Cell")! as UITableViewCell
             
             cell.textLabel?.text = team1[indexPath.row]
             
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("team2Player")! as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("team2Cell")! as UITableViewCell
             
             cell.textLabel?.text = team2[indexPath.row]
             
