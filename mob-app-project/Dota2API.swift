@@ -92,15 +92,3 @@ func parseMatchDetails(dict: NSDictionary) -> MatchDetails? {
 func parseHero(dict: NSDictionary) -> Int? {
     return dict["hero_id"] as? Int
 }
-
-func traverse<A,B>(f: (A -> B?), over: [A]) -> [B]? {
-    var array: [B]? = Optional.Some([])
-    over.map(f).forEach { x in
-        if let val = x {
-            array?.append(val)
-        } else {
-            array = Optional.None
-        }
-    }
-    return array
-}

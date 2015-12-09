@@ -10,6 +10,7 @@
 		4C451C1E1C17299F00B66D31 /* HTTPStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */; };
 		4C451C201C172CB400B66D31 /* Dota2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C451C1F1C172CB400B66D31 /* Dota2API.swift */; };
 		4C451C221C18689F00B66D31 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C451C211C18689F00B66D31 /* Keys.plist */; };
+		4CB28E6E1C18BE4400EED1EF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB28E6D1C18BE4400EED1EF /* Utilities.swift */; };
 		5DA165A11C1725D300289D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165A01C1725D300289D55 /* AppDelegate.swift */; };
 		5DA165A31C1725D300289D55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165A21C1725D300289D55 /* ViewController.swift */; };
 		5DA165A61C1725D300289D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA165A41C1725D300289D55 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStuff.swift; sourceTree = "<group>"; };
 		4C451C1F1C172CB400B66D31 /* Dota2API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dota2API.swift; sourceTree = "<group>"; };
 		4C451C211C18689F00B66D31 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		4CB28E6D1C18BE4400EED1EF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		5DA1659D1C1725D300289D55 /* mob-app-project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mob-app-project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA165A01C1725D300289D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DA165A21C1725D300289D55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				4C451C211C18689F00B66D31 /* Keys.plist */,
 				5DA165C01C1730F900289D55 /* SearchViewController.swift */,
 				5DA165C21C173CB600289D55 /* UserMatchHistory.swift */,
+				4CB28E6D1C18BE4400EED1EF /* Utilities.swift */,
 				5DA165C41C17453D00289D55 /* MatchDetailController.swift */,
 			);
 			path = "mob-app-project";
@@ -222,6 +225,7 @@
 				4C451C1E1C17299F00B66D31 /* HTTPStuff.swift in Sources */,
 				5DA165C51C17453D00289D55 /* MatchDetailController.swift in Sources */,
 				5DA165A11C1725D300289D55 /* AppDelegate.swift in Sources */,
+				4CB28E6E1C18BE4400EED1EF /* Utilities.swift in Sources */,
 				5DA165C11C1730F900289D55 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

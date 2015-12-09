@@ -16,6 +16,14 @@ func getMatchHistory(key: String, accountID: AccountID32) -> NSURL {
     return NSURL(string: "https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v1/?key=\(key)&language=en&account_id=\(accountID)")!
 }
 
+func getMatchHistory(key: String, accountID: AccountID32?) -> NSURL {
+    if let id = accountID {
+        return getMatchHistory(key, accountID: id)
+    } else {
+        return getMatchHistory(key)
+    }
+}
+
 struct MatchHistoryRequest {
     let forAccount: AccountID32
 }

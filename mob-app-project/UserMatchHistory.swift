@@ -27,13 +27,17 @@ class UserMatchHistory: UITableViewController {
                         print(err)
                     case let Either.Right(j):
                         if let mh = parseMatchHistory(j as! [String: AnyObject]) {
-                            self.matches = mh.matches
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self.historyView.reloadData()
-                            }
+                            self.setMatches(mh.matches)
                         }
                     }
                 }
+        }
+    }
+    
+    func setMatches(matches: [Match]) {
+        self.matches = matches
+        onMainThread {
+            self.historyView.reloadData()
         }
     }
     
