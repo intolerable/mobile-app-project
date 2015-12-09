@@ -8,17 +8,16 @@
 
 import Foundation
 
-typealias APIKey = String
-typealias AccountID = String
-typealias MatchID = Int
+func getMatchHistory(key: String) -> NSURL {
+    return NSURL(string: "https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v1/?key=\(key)&language=en")!
+}
 
-
-func apiURL(key: String) -> String {
-    return "https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v1/?key=\(key)&language=en"
+func getMatchHistory(key: String, accountID: AccountID32) -> NSURL {
+    return NSURL(string: "https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v1/?key=\(key)&language=en&account_id=\(accountID)")!
 }
 
 struct MatchHistoryRequest {
-    let forAccount: AccountID
+    let forAccount: AccountID32
 }
 
 struct MatchDetailsRequest {

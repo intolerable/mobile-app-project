@@ -8,6 +8,11 @@
 
 import Foundation
 
+typealias APIKey = String
+typealias AccountID64 = UInt64
+typealias AccountID32 = UInt32
+typealias MatchID = Int
+
 struct MatchHistory {
     let numResults: Int
     let totalResults: Int
@@ -23,6 +28,17 @@ struct Match {
 
 struct MatchDetails {
     let matchID: MatchID
+}
+
+func accountID32to64(account: AccountID32) -> AccountID64 {
+    let universeID: UInt64 = 1
+    let accountType: UInt64 = 1
+    let instance: UInt64 = 1
+    return ((universeID << 56) | (accountType << 52) | (instance << 32) | UInt64(account))
+}
+
+func accountID64to32(account: AccountID64) -> AccountID32 {
+    return UInt32(account)
 }
 
 func parseMatchHistory(dict: NSDictionary) -> MatchHistory? {

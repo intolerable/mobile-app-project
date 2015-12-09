@@ -19,7 +19,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         if
             let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist"),
             let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-                retrieveJSON(NSURL(string: apiURL(dict["api key"] as! String))!) { x in
+                retrieveJSON(getMatchHistory(dict["api key"] as! String)) { x in
                     switch x {
                     case let Either.Left(err):
                         print(err)

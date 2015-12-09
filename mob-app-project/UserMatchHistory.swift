@@ -13,7 +13,7 @@ class UserMatchHistory: UITableViewController {
     
     var matches: [Match] = []
     
-    var requestedAccountID: AccountID?
+    var requestedAccountURL: String?
 
     @IBOutlet var historyView: UITableView!
     
@@ -21,7 +21,7 @@ class UserMatchHistory: UITableViewController {
         if
             let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist"),
             let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-                retrieveJSON(NSURL(string: apiURL(dict["api key"] as! String))!) { x in
+                retrieveJSON(getMatchHistory(dict["api key"] as! String)) { x in
                     switch x {
                     case let Either.Left(err):
                         print(err)
