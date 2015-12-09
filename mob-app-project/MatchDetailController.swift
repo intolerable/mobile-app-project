@@ -29,6 +29,9 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
         team1Table.dataSource = self
         team2Table.dataSource = self
         
+        team1Table.tableFooterView = UIView()
+        team2Table.tableFooterView = UIView()
+        
         scrollView.contentSize.height = 1000
     }
     
