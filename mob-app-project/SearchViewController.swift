@@ -15,6 +15,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         searchTextField.delegate = self
+        
+        if
+            let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist"),
+            let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                retrieveJSON(NSURL(string: apiURL(dict["api key"] as! String))!) { x in
+                    print(x)
+                }
+            }
     }
     
     override func didReceiveMemoryWarning() {

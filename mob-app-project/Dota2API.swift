@@ -15,8 +15,6 @@ struct MatchHistory {
     let matches: [Match]
 }
 
-typealias MatchID = Int
-
 struct Match {
     let matchID: MatchID
 }
