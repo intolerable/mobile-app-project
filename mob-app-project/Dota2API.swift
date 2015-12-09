@@ -21,6 +21,10 @@ struct Match {
     let heroes: [Int]
 }
 
+struct MatchDetails {
+    let matchID: MatchID
+}
+
 func parseMatchHistory(dict: NSDictionary) -> MatchHistory? {
     if
         let res = dict["result"] as? [String: AnyObject],
@@ -52,6 +56,18 @@ func parseMatch(dict: NSDictionary) -> Match? {
                 startTime: NSDate(timeIntervalSince1970: Double(startTimestamp)),
                 heroes: heroIDs)
             return Optional.Some(m)
+    } else {
+        return Optional.None
+    }
+}
+
+func parseMatchDetails(dict: NSDictionary) -> MatchDetails? {
+    if
+        let mid = dict["match_id"] as? Int
+    {
+        let md = MatchDetails(
+            matchID: mid)
+        return Optional.Some(md)
     } else {
         return Optional.None
     }
