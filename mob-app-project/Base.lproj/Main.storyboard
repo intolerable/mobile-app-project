@@ -140,6 +140,7 @@
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="team2Cell" id="zuI-xr-Cc9">
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zuI-xr-Cc9" id="usc-iF-5Lh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -168,6 +169,7 @@
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="team1Cell" id="2S9-ec-LJk">
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2S9-ec-LJk" id="5x8-IX-I0W">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -210,20 +212,20 @@
                                         <exclude reference="Ymv-0s-44T"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="7gU-fb-yA5"/>
+                                        <exclude reference="d5c-Ne-iG8"/>
+                                        <exclude reference="7S6-5W-bai"/>
+                                        <exclude reference="AI9-Mb-kMj"/>
+                                        <exclude reference="Uas-Lb-Ww0"/>
+                                        <exclude reference="yXl-w6-5Ih"/>
+                                        <exclude reference="LbG-Yj-AAA"/>
+                                        <exclude reference="M1Z-g0-nL5"/>
+                                        <exclude reference="riT-IG-1Ee"/>
                                         <exclude reference="8oU-Dg-lbQ"/>
                                         <exclude reference="9Xn-lD-ZtU"/>
                                         <exclude reference="VLT-td-3zq"/>
                                         <exclude reference="ggK-fD-mLS"/>
                                         <exclude reference="phH-s7-H56"/>
-                                        <exclude reference="7S6-5W-bai"/>
-                                        <exclude reference="AI9-Mb-kMj"/>
-                                        <exclude reference="Uas-Lb-Ww0"/>
-                                        <exclude reference="yXl-w6-5Ih"/>
-                                        <exclude reference="7gU-fb-yA5"/>
-                                        <exclude reference="d5c-Ne-iG8"/>
-                                        <exclude reference="LbG-Yj-AAA"/>
-                                        <exclude reference="M1Z-g0-nL5"/>
-                                        <exclude reference="riT-IG-1Ee"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -234,20 +236,20 @@
                                         <include reference="Ymv-0s-44T"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="7gU-fb-yA5"/>
+                                        <include reference="d5c-Ne-iG8"/>
+                                        <include reference="7S6-5W-bai"/>
+                                        <include reference="AI9-Mb-kMj"/>
+                                        <include reference="Uas-Lb-Ww0"/>
+                                        <include reference="yXl-w6-5Ih"/>
+                                        <include reference="LbG-Yj-AAA"/>
+                                        <exclude reference="M1Z-g0-nL5"/>
+                                        <include reference="riT-IG-1Ee"/>
                                         <include reference="8oU-Dg-lbQ"/>
                                         <exclude reference="9Xn-lD-ZtU"/>
                                         <exclude reference="VLT-td-3zq"/>
                                         <exclude reference="ggK-fD-mLS"/>
                                         <include reference="phH-s7-H56"/>
-                                        <include reference="7S6-5W-bai"/>
-                                        <include reference="AI9-Mb-kMj"/>
-                                        <include reference="Uas-Lb-Ww0"/>
-                                        <include reference="yXl-w6-5Ih"/>
-                                        <include reference="7gU-fb-yA5"/>
-                                        <include reference="d5c-Ne-iG8"/>
-                                        <include reference="LbG-Yj-AAA"/>
-                                        <exclude reference="M1Z-g0-nL5"/>
-                                        <include reference="riT-IG-1Ee"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -338,11 +340,11 @@
             </objects>
             <point key="canvasLocation" x="-1264" y="230"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Dota 2 Match Finder-->
         <scene sceneID="emV-Ht-xnc">
             <objects>
                 <tabBarController id="d6e-mg-LqW" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="RZi-ss-A7J"/>
+                    <navigationItem key="navigationItem" title="Dota 2 Match Finder" id="RZi-ss-A7J"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="YuL-Gz-emm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -359,6 +361,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dpc-U1-bzH"/>
+        <segue reference="Mgd-qB-tTS"/>
     </inferredMetricsTieBreakers>
 </document>
