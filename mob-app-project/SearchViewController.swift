@@ -48,4 +48,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "usernameSearchSegue" {
+            if let svc = segue.destinationViewController as? UserMatchHistory {
+                svc.requestedAccountURL = searchTextField.text
+            }
+        }
+    }
 }
