@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -103,13 +104,172 @@
                     <view key="view" contentMode="scaleToFill" id="XFy-hh-g76">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dire Victory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMH-x9-xx8">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 31 - 42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96L-1x-u9T">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-Rz-YBB">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="team1Player" id="U1E-ap-ug2">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U1E-ap-ug2" id="aze-ul-cjT">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X9a-KJ-Vbd">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="team2Player" id="pfg-u3-CjT">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pfg-u3-CjT" id="miB-1e-D0i">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fraser is a even bigger turd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qua-ZI-Urb">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fraser is an even bigger turd than before" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPr-mX-JPp">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u4S-Rz-YBB" firstAttribute="top" secondItem="96L-1x-u9T" secondAttribute="bottom" constant="7.5" id="0ai-aU-56G"/>
+                            <constraint firstItem="X9a-KJ-Vbd" firstAttribute="top" secondItem="u4S-Rz-YBB" secondAttribute="bottom" constant="8" id="1LL-Tu-jOl"/>
+                            <constraint firstItem="96L-1x-u9T" firstAttribute="centerX" secondItem="XFy-hh-g76" secondAttribute="centerX" id="ATF-bx-2Jk"/>
+                            <constraint firstItem="96L-1x-u9T" firstAttribute="top" secondItem="jMH-x9-xx8" secondAttribute="bottom" constant="7.5" id="Ed9-M7-7ty"/>
+                            <constraint firstItem="X9a-KJ-Vbd" firstAttribute="centerX" secondItem="XFy-hh-g76" secondAttribute="centerX" id="LMw-df-fTJ"/>
+                            <constraint firstItem="qua-ZI-Urb" firstAttribute="top" secondItem="SfN-Ja-iXP" secondAttribute="bottom" constant="143" id="LT3-Bz-d8w"/>
+                            <constraint firstItem="jMH-x9-xx8" firstAttribute="top" secondItem="SfN-Ja-iXP" secondAttribute="bottom" constant="8" id="MdB-Hl-PR1"/>
+                            <constraint firstItem="jMH-x9-xx8" firstAttribute="centerX" secondItem="XFy-hh-g76" secondAttribute="centerX" id="ORP-q7-hia"/>
+                            <constraint firstItem="X9a-KJ-Vbd" firstAttribute="leading" secondItem="XFy-hh-g76" secondAttribute="leadingMargin" constant="-20" id="WvK-fu-nIX"/>
+                            <constraint firstItem="c7E-Rl-X5P" firstAttribute="top" secondItem="X9a-KJ-Vbd" secondAttribute="bottom" constant="33" id="Xqm-pb-zWV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u4S-Rz-YBB" secondAttribute="trailing" constant="-20" id="YGJ-x7-PJr"/>
+                            <constraint firstItem="u4S-Rz-YBB" firstAttribute="centerX" secondItem="XFy-hh-g76" secondAttribute="centerX" id="cwY-o2-ZaV"/>
+                            <constraint firstItem="u4S-Rz-YBB" firstAttribute="leading" secondItem="XFy-hh-g76" secondAttribute="leadingMargin" constant="-20" id="ecn-er-6T7"/>
+                            <constraint firstItem="aPr-mX-JPp" firstAttribute="leading" secondItem="XFy-hh-g76" secondAttribute="leadingMargin" constant="33" id="hWB-tC-g9r"/>
+                            <constraint firstItem="c7E-Rl-X5P" firstAttribute="top" secondItem="u4S-Rz-YBB" secondAttribute="bottom" constant="332" id="oXl-sO-rws"/>
+                            <constraint firstItem="aPr-mX-JPp" firstAttribute="top" secondItem="SfN-Ja-iXP" secondAttribute="bottom" constant="79" id="u1h-fV-9eS"/>
+                            <constraint firstItem="qua-ZI-Urb" firstAttribute="leading" secondItem="XFy-hh-g76" secondAttribute="leadingMargin" constant="24" id="wz0-Cd-oGu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X9a-KJ-Vbd" secondAttribute="trailing" constant="-20" id="xbO-gE-22O"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jMH-x9-xx8"/>
+                                <exclude reference="96L-1x-u9T"/>
+                                <exclude reference="u4S-Rz-YBB"/>
+                                <exclude reference="X9a-KJ-Vbd"/>
+                                <exclude reference="qua-ZI-Urb"/>
+                                <exclude reference="aPr-mX-JPp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="hWB-tC-g9r"/>
+                                <exclude reference="u1h-fV-9eS"/>
+                                <exclude reference="LT3-Bz-d8w"/>
+                                <exclude reference="wz0-Cd-oGu"/>
+                                <exclude reference="0ai-aU-56G"/>
+                                <exclude reference="YGJ-x7-PJr"/>
+                                <exclude reference="cwY-o2-ZaV"/>
+                                <exclude reference="ecn-er-6T7"/>
+                                <exclude reference="MdB-Hl-PR1"/>
+                                <exclude reference="ORP-q7-hia"/>
+                                <exclude reference="ATF-bx-2Jk"/>
+                                <exclude reference="Ed9-M7-7ty"/>
+                                <exclude reference="1LL-Tu-jOl"/>
+                                <exclude reference="LMw-df-fTJ"/>
+                                <exclude reference="WvK-fu-nIX"/>
+                                <exclude reference="xbO-gE-22O"/>
+                                <exclude reference="Xqm-pb-zWV"/>
+                                <exclude reference="oXl-sO-rws"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="aPr-mX-JPp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="hWB-tC-g9r"/>
+                                <include reference="u1h-fV-9eS"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="qua-ZI-Urb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="LT3-Bz-d8w"/>
+                                <include reference="wz0-Cd-oGu"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="jMH-x9-xx8"/>
+                                <include reference="96L-1x-u9T"/>
+                                <include reference="u4S-Rz-YBB"/>
+                                <include reference="X9a-KJ-Vbd"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0ai-aU-56G"/>
+                                <include reference="YGJ-x7-PJr"/>
+                                <include reference="cwY-o2-ZaV"/>
+                                <include reference="ecn-er-6T7"/>
+                                <include reference="MdB-Hl-PR1"/>
+                                <include reference="ORP-q7-hia"/>
+                                <include reference="ATF-bx-2Jk"/>
+                                <include reference="Ed9-M7-7ty"/>
+                                <include reference="1LL-Tu-jOl"/>
+                                <include reference="LMw-df-fTJ"/>
+                                <include reference="WvK-fu-nIX"/>
+                                <include reference="xbO-gE-22O"/>
+                                <include reference="Xqm-pb-zWV"/>
+                                <include reference="oXl-sO-rws"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="96L-1x-u9T" id="64m-I5-asd"/>
+                        <outlet property="team1Table" destination="u4S-Rz-YBB" id="gq0-9d-kBx"/>
+                        <outlet property="team2Table" destination="X9a-KJ-Vbd" id="gCR-l2-mOs"/>
+                        <outlet property="victoryLabel" destination="jMH-x9-xx8" id="5I7-5f-lm0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kfk-vz-BdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="176"/>
+            <point key="canvasLocation" x="1096.5" y="150"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sta-lQ-VeK">
