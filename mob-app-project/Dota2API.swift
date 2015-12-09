@@ -35,6 +35,7 @@ struct Player {
 
 struct MatchDetails {
     let matchID: MatchID
+    
 }
 
 func accountID32to64(account: AccountID32) -> AccountID64 {

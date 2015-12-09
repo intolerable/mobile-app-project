@@ -72,7 +72,7 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <connections>
-                                    <segue destination="a7n-mW-EcH" kind="show" id="2LR-3N-VpG"/>
+                                    <segue destination="a7n-mW-EcH" kind="show" identifier="showMatchDetails" id="2LR-3N-VpG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -18,6 +18,9 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var victoryLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var player: AccountID32?
+    var matchID: MatchID?
+    
     let team1 = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
     let team2 = ["Player 1", "Player 2", "Player 3", "Player 9", "Player 10"]
     

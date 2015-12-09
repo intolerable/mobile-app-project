@@ -82,4 +82,18 @@ class UserMatchHistory: UITableViewController {
         
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showMatchDetails" {
+            if
+                let mdc = segue.destinationViewController as? MatchDetailController,
+                let tvc = sender as? UITableViewCell,
+                let selectedRow = self.tableView.indexPathForCell(tvc)
+                {
+                mdc.player = accountID
+                mdc.matchID = matches[selectedRow.indexAtPosition(1)].matchID
+                print(mdc.matchID)
+            }
+        }
+    }
 }
