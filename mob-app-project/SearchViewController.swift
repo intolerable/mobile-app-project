@@ -16,16 +16,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         searchTextField.delegate = self
         
-        if
-            let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist"),
-            let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-                retrieveJSON(getMatchHistory(dict["api key"] as! String)) { x in
-                    switch x {
-                    case let Either.Left(err):
-                        print(err)
-                    case let Either.Right(j):
-                        print(parseMatchHistory(j as! [String: AnyObject]))
-                }
+        let key = getAPIKey()
+        
+        retrieveJSON(getMatchHistory(key)) { x in
+            switch x {
+            case let Either.Left(err):
+                print(err)
+            case let Either.Right(j):
+                print(parseMatchHistory(j as! [String: AnyObject]))
             }
         }
     }

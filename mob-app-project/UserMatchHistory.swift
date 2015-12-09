@@ -18,19 +18,16 @@ class UserMatchHistory: UITableViewController {
     @IBOutlet var historyView: UITableView!
     
     override func viewDidLoad() {
-        if
-            let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist"),
-            let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
-                retrieveJSON(getMatchHistory(dict["api key"] as! String)) { x in
-                    switch x {
-                    case let Either.Left(err):
-                        print(err)
-                    case let Either.Right(j):
-                        if let mh = parseMatchHistory(j as! [String: AnyObject]) {
-                            self.setMatches(mh.matches)
-                        }
-                    }
+        let key = getAPIKey()
+        retrieveJSON(getMatchHistory(key)) { x in
+            switch x {
+            case let Either.Left(err):
+                print(err)
+            case let Either.Right(j):
+                if let mh = parseMatchHistory(j as! [String: AnyObject]) {
+                    self.setMatches(mh.matches)
                 }
+            }
         }
     }
     

@@ -23,3 +23,14 @@ func traverse<A,B>(f: (A -> B?), over: [A]) -> [B]? {
 func onMainThread(action: (Void -> Void)) {
     dispatch_async(dispatch_get_main_queue(), action)
 }
+
+func getAPIKey() -> APIKey {
+    if
+        let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist"),
+        let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+            return dict["api key"] as! String
+    } else {
+        print("No API key configured in Keys.plist!")
+        exit(0)
+    }
+}
