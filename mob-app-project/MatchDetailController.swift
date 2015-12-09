@@ -11,7 +11,7 @@ import UIKit
 
 class MatchDetailController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     
-    // MARK: Properties
+    // MARK: Outlet
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var victoryLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -23,6 +23,8 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize = CGSizeMake(300, 1000)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
