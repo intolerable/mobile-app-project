@@ -39,12 +39,16 @@ func retrieveJSON(url: NSURL, handler: (Either<NSError, AnyObject> -> Void)) -> 
     let session = NSURLSession.sharedSession()
     
     let task = session.dataTaskWithURL(url) { (data, response, error) in
-        do {
-            let parsedObject = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
-            
-            handler(Either.Right(parsedObject))
-        } catch let err as NSError {
-            handler(Either.Left(err))
+        if let data = data {
+            do {
+                let parsedObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
+                
+                handler(Either.Right(parsedObject))
+            } catch let err as NSError {
+                handler(Either.Left(err))
+            }
+        } else {
+            handler(Either.Left(error!))
         }
     }
     
