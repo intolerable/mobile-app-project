@@ -18,6 +18,7 @@ struct MatchHistory {
 struct Match {
     let matchID: MatchID
     let startTime: NSDate
+    let heroes: [Int]
 }
 
 func parseMatchHistory(dict: NSDictionary) -> MatchHistory? {
@@ -42,15 +43,22 @@ func parseMatchHistory(dict: NSDictionary) -> MatchHistory? {
 func parseMatch(dict: NSDictionary) -> Match? {
     if
         let mid = dict["match_id"] as? Int,
-        let startTimestamp = dict["start_time"] as? Int
+        let startTimestamp = dict["start_time"] as? Int,
+        let players = dict["players"] as? [[String: AnyObject]],
+        let heroIDs = traverse(parseHero, over: players)
         {
             let m = Match(
                 matchID: mid,
-                startTime: NSDate(timeIntervalSince1970: Double(startTimestamp)))
+                startTime: NSDate(timeIntervalSince1970: Double(startTimestamp)),
+                heroes: heroIDs)
             return Optional.Some(m)
     } else {
         return Optional.None
     }
+}
+
+func parseHero(dict: NSDictionary) -> Int? {
+    return dict["hero_id"] as? Int
 }
 
 func traverse<A,B>(f: (A -> B?), over: [A]) -> [B]? {
