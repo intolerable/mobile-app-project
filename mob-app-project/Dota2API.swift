@@ -38,7 +38,7 @@ func accountID32to64(account: AccountID32) -> AccountID64 {
 }
 
 func accountID64to32(account: AccountID64) -> AccountID32 {
-    return UInt32(account)
+    return UInt32(truncatingBitPattern: account)
 }
 
 func parseMatchHistory(dict: NSDictionary) -> MatchHistory? {
@@ -91,4 +91,16 @@ func parseMatchDetails(dict: NSDictionary) -> MatchDetails? {
 
 func parseHero(dict: NSDictionary) -> Int? {
     return dict["hero_id"] as? Int
+}
+
+func parseAccount(dict: NSDictionary) -> AccountID32? {
+    if
+        let response = dict["response"] as? [String: AnyObject],
+        let idString = response["steamid"] as? String,
+        let steamID = UInt64(idString) {
+            print(steamID)
+            return accountID64to32(steamID)
+    } else {
+        return Optional.None
+    }
 }

@@ -24,6 +24,10 @@ func getMatchHistory(key: String, accountID: AccountID32?) -> NSURL {
     }
 }
 
+func resolveVanityURL(key: String, vanityURL: String) -> NSURL {
+    return NSURL(string: "https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=\(key)&vanityurl=\(vanityURL)")!
+}
+
 struct MatchHistoryRequest {
     let forAccount: AccountID32
 }

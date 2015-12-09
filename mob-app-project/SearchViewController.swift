@@ -14,6 +14,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Dota 2 Match Finder"
+        
         searchTextField.delegate = self
         
         let key = getAPIKey()
