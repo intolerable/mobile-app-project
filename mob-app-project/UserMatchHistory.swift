@@ -14,12 +14,11 @@ class UserMatchHistory: UITableViewController {
     var matches: [Match] = []
     
     var requestedAccountURL: String?
+    var accountID: AccountID32?
 
     @IBOutlet var historyView: UITableView!
     
     override func viewDidLoad() {
-        
-        self.title = requestedAccountURL ?? "Recent Matches"
         
         let key = getAPIKey()
         func handleJSONHistory(resp: Either<NSError, AnyObject>) {
@@ -37,6 +36,7 @@ class UserMatchHistory: UITableViewController {
                 switch x {
                 case let Either.Right(j):
                     if let acc = parseAccount(j as! [String: AnyObject]) {
+                        self.accountID = Optional.Some(acc)
                         retrieveJSON(getMatchHistory(key, accountID: acc), handler: handleJSONHistory)
                     }
                 case let Either.Left(y):
@@ -55,6 +55,15 @@ class UserMatchHistory: UITableViewController {
         }
     }
     
+    func getUserAccount(accID: AccountID32, players: [Player]) -> Player? {
+        print("players: \(players.map({$0.accountID}))")
+        if let p = players.filter({ $0.accountID == accID }).first {
+            return Optional.Some(p)
+        } else {
+            return Optional.None
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matches.count
     }
@@ -63,7 +72,13 @@ class UserMatchHistory: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("prototypeCell1")! as UITableViewCell
         
-        cell.textLabel?.text = String(matches[indexPath.row])
+        if
+            let accID = self.accountID,
+            let userAccount = getUserAccount(accID, players: matches[indexPath.row].players) {
+            cell.textLabel?.text = String("Hero: \(userAccount.heroID)")
+        } else {
+            cell.textLabel?.text = String(matches[indexPath.row])
+        }
         
         return cell
     }

@@ -102,7 +102,7 @@ func parsePlayer(dict: NSDictionary) -> Player? {
         let position = dict["player_slot"] as? Int {
             let p = Player(
                 heroID: heroID,
-                accountID: dict["account_id"] as? UInt32,
+                accountID: (dict["account_id"] as? Int).flatMap({UInt32($0)}),
                 position: position)
             return Optional.Some(p)
     } else {
@@ -115,7 +115,6 @@ func parseAccount(dict: NSDictionary) -> AccountID32? {
         let response = dict["response"] as? [String: AnyObject],
         let idString = response["steamid"] as? String,
         let steamID = UInt64(idString) {
-            print(steamID)
             return accountID64to32(steamID)
     } else {
         return Optional.None
