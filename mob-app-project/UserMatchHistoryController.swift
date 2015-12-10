@@ -11,11 +11,14 @@ import UIKit
 
 class UserMatchHistoryController: UITableViewController {
     
-    var matches: [Match] = []
+    // MARK: Properties
     
+    var matches: [Match] = []
     var requestedAccountURL: String?
     var accountID: AccountID32?
 
+    // MARK: Outlets
+    
     @IBOutlet var historyView: UITableView!
     
     override func viewDidLoad() {
@@ -26,6 +29,8 @@ class UserMatchHistoryController: UITableViewController {
         
         self.reloadContent()
     }
+    
+    // MARK: Functions
     
     // when the view initially loads or the refresh pull is activated, we
     //   pull all the content from the remote server again and then update

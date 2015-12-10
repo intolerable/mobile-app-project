@@ -23,7 +23,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    // MARK: Properties
+    // MARK: Outlets
     
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -37,6 +37,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    
+    // MARK: Segues
     
     // sets up the segue to handle the requested user url
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

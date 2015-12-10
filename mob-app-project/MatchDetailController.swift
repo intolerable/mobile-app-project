@@ -18,6 +18,8 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var victoryLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    // MARK: Properties
+    
     var player: AccountID32?
     var matchID: MatchID?
     var matchDetails: MatchDetails?
@@ -60,6 +62,8 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
     }
+    
+    // MARK: Functions
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let matchDetails = self.matchDetails {
