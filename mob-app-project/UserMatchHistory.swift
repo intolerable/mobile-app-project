@@ -32,6 +32,7 @@ class UserMatchHistory: UITableViewController {
         func handleJSONHistory(resp: Either<NSError, AnyObject>) {
             switch resp {
             case let Either.Left(err):
+                self.showErrorPopup()
                 print(err) // actually handle the error...
             case let Either.Right(j):
                 if let mh = parseMatchHistory(j as! [String: AnyObject]) {
@@ -69,6 +70,17 @@ class UserMatchHistory: UITableViewController {
         self.refreshControl?.endRefreshing()
         onMainThread {
             self.historyView.reloadData()
+        }
+    }
+    
+    func showErrorPopup() {
+        let alert = UIAlertView(
+            title: "Error",
+            message: "Couldn't load match history information",
+            delegate: Optional.None,
+            cancelButtonTitle: "OK")
+        onMainThread {
+            alert.show()
         }
     }
     
