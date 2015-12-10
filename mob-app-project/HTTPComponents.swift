@@ -1,5 +1,5 @@
 //
-//  HTTPStuff.swift
+//  HTTPComponents.swift
 //  mob-app-project
 //
 //  Created by Fraser Murray on 08/12/2015.
