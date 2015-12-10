@@ -39,6 +39,8 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
             
             scrollView.contentSize.height = 1000
             
+            self.title = "#\(matchID)"
+            
             let key = getAPIKey()
             print("shit")
             retrieveJSON(getMatchDetails(key, matchID: matchID)) { x in
