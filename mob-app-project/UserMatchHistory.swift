@@ -47,6 +47,8 @@ class UserMatchHistory: UITableViewController {
                     if let acc = parseAccount(j as! [String: AnyObject]) {
                         self.accountID = Optional.Some(acc)
                         retrieveJSON(getMatchHistory(key, accountID: acc), handler: handleJSONHistory)
+                    } else {
+                        self.showErrorPopup("That user doesn't exist")
                     }
                 case let Either.Left(y):
                     handleJSONHistory(Either.Left(y))
@@ -74,9 +76,13 @@ class UserMatchHistory: UITableViewController {
     }
     
     func showErrorPopup() {
+        self.showErrorPopup(Optional.None)
+    }
+    
+    func showErrorPopup(err: String?) {
         let alert = UIAlertController(
             title: "Error",
-            message: "Couldn't load match history information",
+            message: err ?? "Couldn't load match history information",
             preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(
