@@ -50,5 +50,4 @@ func timeAgo(date: NSDate) -> String {
     if minutes > 1 { return "\(minutes) minutes ago" }
     if minutes > 0 { return "\(minutes) minute ago" }
     return "less than a minute ago"
-    
 }
