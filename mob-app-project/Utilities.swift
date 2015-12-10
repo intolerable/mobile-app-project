@@ -34,3 +34,21 @@ func getAPIKey() -> APIKey {
         exit(0)
     }
 }
+
+func timeAgo(date: NSDate) -> String {
+    let seconds = Int(NSDate().timeIntervalSinceDate(date))
+    let minutes = seconds / 60
+    let hours = minutes / 60
+    let days = hours / 24
+    let weeks = days / 7
+    if weeks > 1 { return "\(weeks) weeks ago" }
+    if weeks > 0 { return "\(weeks) week ago" }
+    if days > 1 { return "\(days) days ago" }
+    if days > 0 { return "\(days) day ago" }
+    if hours > 1 { return "\(hours) hours ago" }
+    if hours > 0 { return "\(hours) hour ago" }
+    if minutes > 1 { return "\(minutes) minutes ago" }
+    if minutes > 0 { return "\(minutes) minute ago" }
+    return "less than a minute ago"
+    
+}
