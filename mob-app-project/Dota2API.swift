@@ -35,7 +35,21 @@ struct Player {
 
 struct MatchDetails {
     let matchID: MatchID
-    
+    let radiantWin: Bool
+    let startTime: NSDate
+    let duration: Int64
+    let matchPlayers: [MatchPlayer]
+}
+
+struct MatchPlayer {
+    let accountID: AccountID32
+    let position: Int
+    let heroID: Int
+    let kills: Int
+    let assists: Int
+    let deaths: Int
+    let level: Int
+    let heroDamage: Int
 }
 
 func accountID32to64(account: AccountID32) -> AccountID64 {
@@ -88,11 +102,46 @@ func parseMatch(dict: NSDictionary) -> Match? {
 
 func parseMatchDetails(dict: NSDictionary) -> MatchDetails? {
     if
-        let mid = dict["match_id"] as? Int
-    {
-        let md = MatchDetails(
-            matchID: mid)
-        return Optional.Some(md)
+        let mid = dict["match_id"] as? Int,
+        let radWin = dict["radiant_win"] as? Bool,
+        let staTime = dict["start_time"] as? NSDate,
+        let dur = dict["duration"] as? Int64,
+        let matchPlayers = dict["players"] as? [[String: AnyObject]],
+        let parsedMatPlays = traverse(parseMatchPlayers, over: matchPlayers)
+        {
+            let md = MatchDetails(
+                matchID: mid,
+                radiantWin: radWin,
+                startTime: staTime,
+                duration: dur,
+                matchPlayers: parsedMatPlays
+            )
+            return Optional.Some(md)
+    } else {
+        return Optional.None
+    }
+}
+
+func parseMatchPlayers(dict: NSDictionary) -> MatchPlayer? {
+    if
+        let accID = dict["account_id"] as? AccountID32,
+        let pos = dict["player_slot"] as? Int,
+        let heroID = dict["hero_id"] as? Int,
+        let kills = dict["kills"] as? Int,
+        let assists = dict["assists"] as? Int,
+        let deaths = dict["deaths"] as? Int,
+        let level = dict["level"] as? Int,
+        let damage = dict["heroDamage"] as? Int {
+            let mp = MatchPlayer(accountID: accID,
+                position: pos,
+                heroID: heroID,
+                kills: kills,
+                assists: assists,
+                deaths: deaths,
+                level: level,
+                heroDamage: damage
+            )
+            return Optional.Some(mp)
     } else {
         return Optional.None
     }
