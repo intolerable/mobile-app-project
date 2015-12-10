@@ -114,7 +114,7 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
                 
                 let cell = tableView.dequeueReusableCellWithIdentifier("team1Cell")! as UITableViewCell
                 
-                cell.textLabel?.text = "\(radiants[indexPath.row].kills)/\(radiants[indexPath.row].deaths)/\(radiants[indexPath.row].assists)"
+                cell.textLabel?.text = "KDA: \(radiants[indexPath.row].kills)/\(radiants[indexPath.row].deaths)/\(radiants[indexPath.row].assists)  Level: \(radiants[indexPath.row].level)"
                 
                 if let heroName = heroIDMapping[radiants[indexPath.row].heroID] {
                     cell.imageView?.image = UIImage(named: "HeroIcons/\(heroName).jpg")
@@ -125,7 +125,7 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
             else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("team2Cell")! as UITableViewCell
                 
-                cell.textLabel?.text = "\(dires[indexPath.row].kills)/\(dires[indexPath.row].deaths)/\(dires[indexPath.row].assists)"
+                cell.textLabel?.text = "KDA: \(dires[indexPath.row].kills)/\(dires[indexPath.row].deaths)/\(dires[indexPath.row].assists)    Level: \(dires[indexPath.row].level)"
                 
                 if let heroName = heroIDMapping[dires[indexPath.row].heroID] {
                     cell.imageView?.image = UIImage(named: "HeroIcons/\(heroName).jpg")
