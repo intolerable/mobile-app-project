@@ -51,9 +51,13 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
                     print("hello friends")
                     if let parsedMatchDetails = parseMatchDetails(response as! [String: AnyObject]){
                         self.matchDetails = parsedMatchDetails
-                        print("poopoo: \(parsedMatchDetails.radiantWin)")
+                        let (radiants, dires) = self.teamPartition(parsedMatchDetails.matchPlayers)
+                        print((radiants, dires))
                         onMainThread {
                             self.setVictoryLabelText(parsedMatchDetails.radiantWin)
+                            self.setScoreLabelText(radiants, dires: dires)
+                            self.team1Table.reloadData()
+                            self.team2Table.reloadData()
                         }
                     }
                 }
@@ -64,14 +68,20 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView.isEqual(team1Table) {
-            return team1.count
-        }
-        else {
-            return team2.count
+        if let matchDetails = self.matchDetails {
+
+            let (radiants, dires) = teamPartition(matchDetails.matchPlayers)
+            
+            if tableView.isEqual(team1Table) {
+                return radiants.count
+            } else {
+                return dires.count
+            }
+        } else {
+            return 0
         }
     }
-    
+
     func setVictoryLabelText(radiantWin: Bool) -> Void {
         if radiantWin {
             victoryLabel.text = "Radiant Victory"
@@ -80,23 +90,51 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    //func setScoreLabelText(
+    func setScoreLabelText(radiants: [MatchPlayer], dires: [MatchPlayer]) -> Void {
+        let radiantScore = radiants.map({$0.kills}).reduce(0, combine: {$0 + $1})
+        let direScore = dires.map({$0.kills}).reduce(0, combine: {$0 + $1})
+        
+        scoreLabel.text = "Score: \(radiantScore) - \(direScore)"
+        
+    }
+    
+    
+    func teamPartition(players: [MatchPlayer]) -> ([MatchPlayer], [MatchPlayer]) {
+        return partition(players) { player in
+            !Bool(128 & player.position)
+        }
+    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if tableView.isEqual(team1Table){
+        
+        if let matchDetails = self.matchDetails {
+            let (radiants, dires) = teamPartition(matchDetails.matchPlayers)
             
-            let cell = tableView.dequeueReusableCellWithIdentifier("team1Cell")! as UITableViewCell
-            
-            cell.textLabel?.text = team1[indexPath.row]
-            
-            return cell
-        }
-        else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("team2Cell")! as UITableViewCell
-            
-            cell.textLabel?.text = team2[indexPath.row]
-            
-            return cell
+            if tableView.isEqual(team1Table){
+                
+                let cell = tableView.dequeueReusableCellWithIdentifier("team1Cell")! as UITableViewCell
+                
+                cell.textLabel?.text = "\(radiants[indexPath.row].kills)/\(radiants[indexPath.row].deaths)/\(radiants[indexPath.row].assists)"
+                
+                if let heroName = heroIDMapping[radiants[indexPath.row].heroID] {
+                    cell.imageView?.image = UIImage(named: "HeroIcons/\(heroName).jpg")
+                }
+                
+                return cell
+            }
+            else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("team2Cell")! as UITableViewCell
+                
+                cell.textLabel?.text = "\(dires[indexPath.row].kills)/\(dires[indexPath.row].deaths)/\(dires[indexPath.row].assists)"
+                
+                if let heroName = heroIDMapping[dires[indexPath.row].heroID] {
+                    cell.imageView?.image = UIImage(named: "HeroIcons/\(heroName).jpg")
+                }
+                
+                return cell
+            }
+        } else {
+            return UITableViewCell()
         }
     }
 }

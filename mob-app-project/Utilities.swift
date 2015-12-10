@@ -55,3 +55,18 @@ func timeAgo(date: NSDate) -> String {
     if minutes > 0 { return "\(minutes) minute ago" }
     return "less than a minute ago"
 }
+
+func partition<A>(array: [A], fn: (A -> Bool)) -> ([A], [A]) {
+    var trues: [A] = []
+    var falses: [A] = []
+    
+    array.forEach { x in
+        if fn(x) {
+            trues.append(x)
+        } else {
+            falses.append(x)
+        }
+    }
+    
+    return (trues, falses)
+}
