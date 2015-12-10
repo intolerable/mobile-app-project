@@ -69,17 +69,22 @@ class UserMatchHistory: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("prototypeCell1")! as UITableViewCell
-        
         if
             let accID = self.accountID,
             let userAccount = getUserAccount(accID, players: matches[indexPath.row].players) {
-            cell.textLabel?.text = String("Hero: \(userAccount.heroID)")
+            let cell = tableView.dequeueReusableCellWithIdentifier("knownPlayer")! as UITableViewCell
+            let match = matches[indexPath.row]
+            cell.textLabel?.adjustsFontSizeToFitWidth = true
+            cell.textLabel?.text = String("#\(match.matchID) (\(timeAgo(match.startTime)))")
+            if let heroName = heroIDMapping[userAccount.heroID] {
+                cell.imageView?.image = UIImage(named: "HeroIcons/\(heroName).jpg")
+            }
+            return cell
         } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("knownPlayer")! as UITableViewCell
             cell.textLabel?.text = String(matches[indexPath.row])
+            return cell
         }
-        
-        return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
