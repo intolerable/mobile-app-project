@@ -42,17 +42,14 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
             self.title = "#\(matchID)"
             
             let key = getAPIKey()
-            print("shit")
             retrieveJSON(getMatchDetails(key, matchID: matchID)) { x in
                 switch x {
                 case let Either.Left(err):
                     print(err)
                 case let Either.Right(response):
-                    print("hello friends")
                     if let parsedMatchDetails = parseMatchDetails(response as! [String: AnyObject]){
                         self.matchDetails = parsedMatchDetails
                         let (radiants, dires) = self.teamPartition(parsedMatchDetails.matchPlayers)
-                        print((radiants, dires))
                         onMainThread {
                             self.setVictoryLabelText(parsedMatchDetails.radiantWin)
                             self.setScoreLabelText(radiants, dires: dires)
@@ -64,8 +61,6 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
                     }
                 }
             }
-        } else {
-            print("poo")
         }
     }
     
