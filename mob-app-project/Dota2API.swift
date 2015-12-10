@@ -104,7 +104,7 @@ func parsePlayer(dict: NSDictionary) -> Player? {
         let position = dict["player_slot"] as? Int {
             let p = Player(
                 heroID: heroID,
-                accountID: (dict["account_id"] as? Int).flatMap({UInt32($0)}),
+                accountID: (dict["account_id"] as? Int).flatMap({$0 == -1 ? Optional.None : UInt32($0)}),
                 position: position)
             return Optional.Some(p)
     } else {
