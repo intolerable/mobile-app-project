@@ -58,6 +58,8 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
                             self.setScoreLabelText(radiants, dires: dires)
                             self.team1Table.reloadData()
                             self.team2Table.reloadData()
+                            self.team1Table.sizeToFit()
+                            self.team2Table.sizeToFit()
                         }
                     }
                 }
