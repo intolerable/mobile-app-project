@@ -20,6 +20,8 @@ class UserMatchHistory: UITableViewController {
     
     override func viewDidLoad() {
         
+        self.title = requestedAccountURL
+        
         let key = getAPIKey()
         func handleJSONHistory(resp: Either<NSError, AnyObject>) {
             switch resp {
