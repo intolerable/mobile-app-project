@@ -27,6 +27,9 @@ class UserMatchHistory: UITableViewController {
         self.reloadContent()
     }
     
+    // when the view initially loads or the refresh pull is activated, we
+    //   pull all the content from the remote server again and then update
+    //   the views
     func reloadContent() {
         let key = getAPIKey()
         func handleJSONHistory(resp: Either<NSError, AnyObject>) {
@@ -62,6 +65,7 @@ class UserMatchHistory: UITableViewController {
         
     }
     
+    // handle the refresh pull and reload everything
     @IBAction func refreshView(sender: UIRefreshControl) {
         
         self.reloadContent()
@@ -79,6 +83,7 @@ class UserMatchHistory: UITableViewController {
         self.showErrorPopup(Optional.None)
     }
     
+    // do a neat popup for when there's an error
     func showErrorPopup(err: String?) {
         let alert = UIAlertController(
             title: "Error",
@@ -97,6 +102,7 @@ class UserMatchHistory: UITableViewController {
         }
     }
     
+    // try to find the active user (by ID) in the players list
     func getUserAccount(accID: AccountID32, players: [Player]) -> Player? {
         if let p = players.filter({ $0.accountID == accID }).first {
             return Optional.Some(p)
@@ -109,6 +115,8 @@ class UserMatchHistory: UITableViewController {
         return matches.count
     }
     
+    // handle the list cells for the history. if we know who the requested user is (i.e. we're not just
+    //   looking for *any* games), then we show an icon to distinguish which hero they were playing
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let match = matches[indexPath.row]
@@ -130,6 +138,7 @@ class UserMatchHistory: UITableViewController {
         }
     }
     
+    // set up the segue transition by passing along the match and player IDs
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showMatchDetails" {
             if

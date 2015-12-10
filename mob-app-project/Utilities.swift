@@ -8,6 +8,9 @@
 
 import Foundation
 
+// given a function f which transforms something to an optional, and a list of those
+//   somethings, map the list of those somethings to a list of optionals, and then,
+//   if every optional in the list is Some, return an Some optional of the list.
 func traverse<A,B>(f: (A -> B?), over: [A]) -> [B]? {
     var array: [B]? = Optional.Some([])
     over.map(f).forEach { x in
@@ -20,10 +23,14 @@ func traverse<A,B>(f: (A -> B?), over: [A]) -> [B]? {
     return array
 }
 
+// dispatch a closure onto the main thread (UI actions need to be run on main
+//   so they take effect promptly). this function is only used for convenience,
+//   we can just use dispatch_async every time but this is much neater
 func onMainThread(action: (Void -> Void)) {
     dispatch_async(dispatch_get_main_queue(), action)
 }
 
+// fetches the API key from Keys.plist, and panics if there isnt one
 func getAPIKey() -> APIKey {
     if
         let path = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist"),
@@ -35,10 +42,13 @@ func getAPIKey() -> APIKey {
     }
 }
 
+// if we have an int, we need to check if it's a valid accountID. valve's api includes
+//   nonsense data that wont parse to represent a user whose profile is private
 func intToAccID(intID: Int?) -> AccountID32? {
     return intID.flatMap({$0 == -1 ? Optional.None : UInt32($0)})
 }
 
+// return a nice human-readable string from a date interval
 func timeAgo(date: NSDate) -> String {
     let seconds = Int(NSDate().timeIntervalSinceDate(date))
     let minutes = seconds / 60
@@ -56,6 +66,9 @@ func timeAgo(date: NSDate) -> String {
     return "less than a minute ago"
 }
 
+// partition an array into two arrays, one whose values evaluate to
+//   true through the predicate, and one whose values evaluate to
+//   false through the predicate
 func partition<A>(array: [A], fn: (A -> Bool)) -> ([A], [A]) {
     var trues: [A] = []
     var falses: [A] = []

@@ -22,9 +22,6 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     var matchID: MatchID?
     var matchDetails: MatchDetails?
     
-    let team1 = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
-    let team2 = ["Player 1", "Player 2", "Player 3", "Player 9", "Player 10"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,7 +92,9 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
-    
+    // partition an array of players into two teams, those on the radiant and
+    //   those on the dire. the way we check for which team they're on is by 
+    //   doing a bitwise and with 128, as that's the bit checked to determine teams
     func teamPartition(players: [MatchPlayer]) -> ([MatchPlayer], [MatchPlayer]) {
         return partition(players) { player in
             !Bool(128 & player.position)

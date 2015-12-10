@@ -38,6 +38,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    // sets up the segue to handle the requested user url
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "usernameSearchSegue" {
             if let svc = segue.destinationViewController as? UserMatchHistory {
