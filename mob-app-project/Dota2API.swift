@@ -37,12 +37,12 @@ struct MatchDetails {
     let matchID: MatchID
     let radiantWin: Bool
     let startTime: NSDate
-    let duration: Int64
+    let duration: Int
     let matchPlayers: [MatchPlayer]
 }
 
 struct MatchPlayer {
-    let accountID: AccountID32
+    let accountID: AccountID32?
     let position: Int
     let heroID: Int
     let kills: Int
@@ -101,20 +101,22 @@ func parseMatch(dict: NSDictionary) -> Match? {
 }
 
 func parseMatchDetails(dict: NSDictionary) -> MatchDetails? {
+    print(dict["result"]!["radiant_win"] as? Bool)
     if
-        let mid = dict["match_id"] as? Int,
-        let radWin = dict["radiant_win"] as? Bool,
-        let staTime = dict["start_time"] as? NSDate,
-        let dur = dict["duration"] as? Int64,
-        let matchPlayers = dict["players"] as? [[String: AnyObject]],
-        let parsedMatPlays = traverse(parseMatchPlayers, over: matchPlayers)
+        let res = dict["result"] as? NSDictionary,
+        let mid = res["match_id"] as? Int,
+        let radWin = res["radiant_win"] as? Bool,
+        let staTime = res["start_time"] as? Int,
+        let dur = res["duration"] as? Int,
+        let matchPlayers = res["players"] as? [[String: AnyObject]],
+        let parsedMatchPlayers = traverse(parseMatchPlayer, over: matchPlayers)
         {
             let md = MatchDetails(
                 matchID: mid,
                 radiantWin: radWin,
-                startTime: staTime,
+                startTime: NSDate(timeIntervalSince1970: Double(staTime)),
                 duration: dur,
-                matchPlayers: parsedMatPlays
+                matchPlayers: parsedMatchPlayers
             )
             return Optional.Some(md)
     } else {
@@ -122,17 +124,16 @@ func parseMatchDetails(dict: NSDictionary) -> MatchDetails? {
     }
 }
 
-func parseMatchPlayers(dict: NSDictionary) -> MatchPlayer? {
+func parseMatchPlayer(dict: NSDictionary) -> MatchPlayer? {
     if
-        let accID = dict["account_id"] as? AccountID32,
         let pos = dict["player_slot"] as? Int,
         let heroID = dict["hero_id"] as? Int,
         let kills = dict["kills"] as? Int,
         let assists = dict["assists"] as? Int,
         let deaths = dict["deaths"] as? Int,
         let level = dict["level"] as? Int,
-        let damage = dict["heroDamage"] as? Int {
-            let mp = MatchPlayer(accountID: accID,
+        let damage = dict["hero_damage"] as? Int {
+            let mp = MatchPlayer(accountID: intToAccID(dict["account_id"] as? Int),
                 position: pos,
                 heroID: heroID,
                 kills: kills,
@@ -153,7 +154,7 @@ func parsePlayer(dict: NSDictionary) -> Player? {
         let position = dict["player_slot"] as? Int {
             let p = Player(
                 heroID: heroID,
-                accountID: (dict["account_id"] as? Int).flatMap({$0 == -1 ? Optional.None : UInt32($0)}),
+                accountID: intToAccID(dict["account_id"] as? Int),
                 position: position)
             return Optional.Some(p)
     } else {

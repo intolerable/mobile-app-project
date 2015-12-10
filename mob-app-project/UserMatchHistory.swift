@@ -56,7 +56,6 @@ class UserMatchHistory: UITableViewController {
     }
     
     func getUserAccount(accID: AccountID32, players: [Player]) -> Player? {
-        print("players: \(players.map({$0.accountID}))")
         if let p = players.filter({ $0.accountID == accID }).first {
             return Optional.Some(p)
         } else {
@@ -92,7 +91,6 @@ class UserMatchHistory: UITableViewController {
                 {
                 mdc.player = accountID
                 mdc.matchID = matches[selectedRow.indexAtPosition(1)].matchID
-                print(mdc.matchID)
             }
         }
     }

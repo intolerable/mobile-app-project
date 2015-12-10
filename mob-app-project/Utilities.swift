@@ -34,3 +34,7 @@ func getAPIKey() -> APIKey {
         exit(0)
     }
 }
+
+func intToAccID(intID: Int?) -> AccountID32? {
+    return intID.flatMap({$0 == -1 ? Optional.None : UInt32($0)})
+}

@@ -24,6 +24,10 @@ func getMatchHistory(key: String, accountID: AccountID32?) -> NSURL {
     }
 }
 
+func getMatchDetails(key: String, matchID: MatchID) -> NSURL {
+    return NSURL(string: "https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/v1/?key=\(key)&language=en&match_id=\(matchID)")!
+}
+
 func resolveVanityURL(key: String, vanityURL: String) -> NSURL {
     return NSURL(string: "https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=\(key)&vanityurl=\(vanityURL)")!
 }

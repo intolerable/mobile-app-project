@@ -20,6 +20,7 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     
     var player: AccountID32?
     var matchID: MatchID?
+    var matchDetails: MatchDetails?
     
     let team1 = ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5"]
     let team2 = ["Player 1", "Player 2", "Player 3", "Player 9", "Player 10"]
@@ -27,15 +28,37 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        team1Table.delegate = self
-        team2Table.delegate = self
-        team1Table.dataSource = self
-        team2Table.dataSource = self
+        if let matchID = matchID {
+            team1Table.delegate = self
+            team2Table.delegate = self
+            team1Table.dataSource = self
+            team2Table.dataSource = self
+            
+            team1Table.tableFooterView = UIView()
+            team2Table.tableFooterView = UIView()
+            
+            scrollView.contentSize.height = 1000
+            
+            let key = getAPIKey()
+            print("shit")
+            retrieveJSON(getMatchDetails(key, matchID: matchID)) { x in
+                switch x {
+                case let Either.Left(err):
+                    print(err)
+                case let Either.Right(response):
+                    print("hello friends")
+                    print(response)
+                    if let matchDetails = parseMatchDetails(response as! [String: AnyObject]){
+                        self.matchDetails = matchDetails
+                        print(self.matchDetails)
+                    }
+                }
+            }
+        } else {
+            print("poo")
+        }
         
-        team1Table.tableFooterView = UIView()
-        team2Table.tableFooterView = UIView()
         
-        scrollView.contentSize.height = 1000
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

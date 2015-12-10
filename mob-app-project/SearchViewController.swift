@@ -17,17 +17,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         self.title = "Dota 2 Match Finder"
         
         searchTextField.delegate = self
-        
-        let key = getAPIKey()
-        
-        retrieveJSON(getMatchHistory(key)) { x in
-            switch x {
-            case let Either.Left(err):
-                print(err)
-            case let Either.Right(j):
-                print(parseMatchHistory(j as! [String: AnyObject]))
-            }
-        }
     }
     
     override func didReceiveMemoryWarning() {
