@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C32D2951C18F7D7005B0493 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C32D2941C18F7D7005B0493 /* GameData.swift */; };
+		4C32D2971C18F898005B0493 /* HeroIcons in Resources */ = {isa = PBXBuildFile; fileRef = 4C32D2961C18F898005B0493 /* HeroIcons */; };
 		4C451C1E1C17299F00B66D31 /* HTTPStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */; };
 		4C451C201C172CB400B66D31 /* Dota2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C451C1F1C172CB400B66D31 /* Dota2API.swift */; };
 		4C451C221C18689F00B66D31 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C451C211C18689F00B66D31 /* Keys.plist */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C32D2941C18F7D7005B0493 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameData.swift; path = "mob-app-project/GameData.swift"; sourceTree = "<group>"; };
+		4C32D2961C18F898005B0493 /* HeroIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HeroIcons; sourceTree = "<group>"; };
 		4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStuff.swift; sourceTree = "<group>"; };
 		4C451C1F1C172CB400B66D31 /* Dota2API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dota2API.swift; sourceTree = "<group>"; };
 		4C451C211C18689F00B66D31 /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		5DA165941C1725D300289D55 = {
 			isa = PBXGroup;
 			children = (
+				4C32D2941C18F7D7005B0493 /* GameData.swift */,
 				5DA1659F1C1725D300289D55 /* mob-app-project */,
 				5DA165B41C1725D300289D55 /* mob-app-projectTests */,
 				5DA1659E1C1725D300289D55 /* Products */,
@@ -95,6 +100,7 @@
 				5DA165A21C1725D300289D55 /* ViewController.swift */,
 				4C451C1D1C17299F00B66D31 /* HTTPStuff.swift */,
 				4C451C1F1C172CB400B66D31 /* Dota2API.swift */,
+				4C32D2961C18F898005B0493 /* HeroIcons */,
 				5DA165A41C1725D300289D55 /* Main.storyboard */,
 				5DA165A71C1725D300289D55 /* Assets.xcassets */,
 				5DA165A91C1725D300289D55 /* LaunchScreen.storyboard */,
@@ -202,6 +208,7 @@
 				5DA165AB1C1725D300289D55 /* LaunchScreen.storyboard in Resources */,
 				5DA165A81C1725D300289D55 /* Assets.xcassets in Resources */,
 				5DA165A61C1725D300289D55 /* Main.storyboard in Resources */,
+				4C32D2971C18F898005B0493 /* HeroIcons in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +233,7 @@
 				5DA165C51C17453D00289D55 /* MatchDetailController.swift in Sources */,
 				5DA165A11C1725D300289D55 /* AppDelegate.swift in Sources */,
 				4CB28E6E1C18BE4400EED1EF /* Utilities.swift in Sources */,
+				4C32D2951C18F7D7005B0493 /* GameData.swift in Sources */,
 				5DA165C11C1730F900289D55 /* SearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

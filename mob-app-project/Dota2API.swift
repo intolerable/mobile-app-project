@@ -12,6 +12,7 @@ typealias APIKey = String
 typealias AccountID64 = UInt64
 typealias AccountID32 = UInt32
 typealias MatchID = Int
+typealias HeroID = Int
 
 struct MatchHistory {
     let numResults: Int
