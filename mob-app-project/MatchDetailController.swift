@@ -49,18 +49,18 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
                     print(err)
                 case let Either.Right(response):
                     print("hello friends")
-                    print(response)
-                    if let matchDetails = parseMatchDetails(response as! [String: AnyObject]){
-                        self.matchDetails = matchDetails
-                        print(self.matchDetails)
+                    if let parsedMatchDetails = parseMatchDetails(response as! [String: AnyObject]){
+                        self.matchDetails = parsedMatchDetails
+                        print("poopoo: \(parsedMatchDetails.radiantWin)")
+                        onMainThread {
+                            self.setVictoryLabelText(parsedMatchDetails.radiantWin)
+                        }
                     }
                 }
             }
         } else {
             print("poo")
         }
-        
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,6 +71,16 @@ class MatchDetailController: UIViewController, UITableViewDataSource, UITableVie
             return team2.count
         }
     }
+    
+    func setVictoryLabelText(radiantWin: Bool) -> Void {
+        if radiantWin {
+            victoryLabel.text = "Radiant Victory"
+        } else {
+            victoryLabel.text = "Dire Victory"
+        }
+    }
+    
+    //func setScoreLabelText(
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if tableView.isEqual(team1Table){
