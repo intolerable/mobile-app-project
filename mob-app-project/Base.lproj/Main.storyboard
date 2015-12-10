@@ -88,6 +88,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" systemItem="history" id="BhS-IS-QdL"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="kRe-oI-q9p">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <connections>
+                            <action selector="refreshView:" destination="y4j-iQ-ADs" eventType="primaryActionTriggered" id="XPi-Vx-mab"/>
+                        </connections>
+                    </refreshControl>
                     <connections>
                         <outlet property="historyView" destination="cfP-BT-qQ0" id="wno-X6-x2J"/>
                     </connections>

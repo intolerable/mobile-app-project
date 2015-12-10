@@ -22,6 +22,12 @@ class UserMatchHistory: UITableViewController {
         
         self.title = requestedAccountURL
         
+        self.refreshControl?.beginRefreshing()
+        
+        self.reloadContent()
+    }
+    
+    func reloadContent() {
         let key = getAPIKey()
         func handleJSONHistory(resp: Either<NSError, AnyObject>) {
             switch resp {
@@ -48,10 +54,19 @@ class UserMatchHistory: UITableViewController {
         } else {
             retrieveJSON(getMatchHistory(key), handler: handleJSONHistory)
         }
+        
+        self.refreshControl?.endRefreshing()
+        
+    }
+    
+    @IBAction func refreshView(sender: UIRefreshControl) {
+        
+        self.reloadContent()
     }
     
     func setMatches(matches: [Match]) {
         self.matches = matches
+        self.refreshControl?.endRefreshing()
         onMainThread {
             self.historyView.reloadData()
         }
