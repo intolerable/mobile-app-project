@@ -74,13 +74,20 @@ class UserMatchHistory: UITableViewController {
     }
     
     func showErrorPopup() {
-        let alert = UIAlertView(
+        let alert = UIAlertController(
             title: "Error",
             message: "Couldn't load match history information",
-            delegate: Optional.None,
-            cancelButtonTitle: "OK")
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(
+            UIAlertAction(
+                title: "OK",
+                style: UIAlertActionStyle.Default,
+                handler: {_ in alert.dismissViewControllerAnimated(true, completion: Optional.None)})
+            )
+        
         onMainThread {
-            alert.show()
+            self.presentViewController(alert, animated: true, completion: Optional.None)
         }
     }
     
