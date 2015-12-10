@@ -1,5 +1,5 @@
 //
-//  UserMatchHistory.swift
+//  UserMatchHistoryController.swift
 //  mob-app-project
 //
 //  Created by Harry Duce on 08/12/2015.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UserMatchHistory: UITableViewController {
+class UserMatchHistoryController: UITableViewController {
     
     var matches: [Match] = []
     

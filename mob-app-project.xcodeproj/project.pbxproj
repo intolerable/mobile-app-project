@@ -20,7 +20,7 @@
 		5DA165AB1C1725D300289D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DA165A91C1725D300289D55 /* LaunchScreen.storyboard */; };
 		5DA165B61C1725D300289D55 /* mob_app_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165B51C1725D300289D55 /* mob_app_projectTests.swift */; };
 		5DA165C11C1730F900289D55 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165C01C1730F900289D55 /* SearchViewController.swift */; };
-		5DA165C31C173CB600289D55 /* UserMatchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165C21C173CB600289D55 /* UserMatchHistory.swift */; };
+		5DA165C31C173CB600289D55 /* UserMatchHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165C21C173CB600289D55 /* UserMatchHistoryController.swift */; };
 		5DA165C51C17453D00289D55 /* MatchDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA165C41C17453D00289D55 /* MatchDetailController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,7 @@
 		5DA165B51C1725D300289D55 /* mob_app_projectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mob_app_projectTests.swift; sourceTree = "<group>"; };
 		5DA165B71C1725D300289D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DA165C01C1730F900289D55 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		5DA165C21C173CB600289D55 /* UserMatchHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMatchHistory.swift; sourceTree = "<group>"; };
+		5DA165C21C173CB600289D55 /* UserMatchHistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMatchHistoryController.swift; sourceTree = "<group>"; };
 		5DA165C41C17453D00289D55 /* MatchDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +107,7 @@
 				5DA165AC1C1725D300289D55 /* Info.plist */,
 				4C451C211C18689F00B66D31 /* Keys.plist */,
 				5DA165C01C1730F900289D55 /* SearchViewController.swift */,
-				5DA165C21C173CB600289D55 /* UserMatchHistory.swift */,
+				5DA165C21C173CB600289D55 /* UserMatchHistoryController.swift */,
 				4CB28E6D1C18BE4400EED1EF /* Utilities.swift */,
 				5DA165C41C17453D00289D55 /* MatchDetailController.swift */,
 			);
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA165A31C1725D300289D55 /* ViewController.swift in Sources */,
-				5DA165C31C173CB600289D55 /* UserMatchHistory.swift in Sources */,
+				5DA165C31C173CB600289D55 /* UserMatchHistoryController.swift in Sources */,
 				4C451C201C172CB400B66D31 /* Dota2API.swift in Sources */,
 				4C451C1E1C17299F00B66D31 /* HTTPComponents.swift in Sources */,
 				5DA165C51C17453D00289D55 /* MatchDetailController.swift in Sources */,
